@@ -74,18 +74,21 @@ const Pin = () => {
             <form onSubmit={handleSubmit(submitForm)}>
               <div className="formPin">
                 {pin.map((data, index) => (
-                  <input
-                    key={index}
-                    id={`pin-${index}`}
-                    type="password"
-                    name="pin"
-                    maxLength="1"
-                    value={data}
-                    onChange={(e) => handleChange(e.target, index)}
-                    onFocus={(e) => e.target.select()}
-                    className="pin-input"
-                    inputMode="numeric"
-                  />
+                 <input
+                  key={index}
+                  id={`pin-${index}`}
+                  type="password"
+                  name="pin"
+                  maxLength="1"
+                  value={data}
+                  onChange={(e) => handleChange(e.target, index)}
+                  onFocus={(e) => e.target.select()}
+                  className="pin-input"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  autoComplete="off"
+                />
+
                 ))}
               </div>
 
